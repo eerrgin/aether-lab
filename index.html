@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aether Lab — Experimental Interface</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <canvas id="net"></canvas>
+
+  <div class="lab">
+    <header class="topbar">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>AETHER LAB</span>
+      </div>
+      <div class="status">
+        <span class="status-dot"></span>
+        <span id="model-status">model idle</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel left">
+        <div class="panel-title">EXPERIMENT LOG</div>
+        <div id="log" class="log">
+          <div class="log-entry system">system initialized — latent space ready</div>
+        </div>
+      </section>
+
+      <section class="panel center">
+        <div class="panel-title">PROMPT</div>
+        <textarea id="prompt" placeholder="Describe an idea, a question, or a concept to explore..." rows="4"></textarea>
+        
+        <div class="controls">
+          <button id="run" class="btn primary">Run Experiment</button>
+          <button id="clear" class="btn">Clear</button>
+        </div>
+
+        <div class="meta">
+          <span>temp: <span id="temp">0.7</span></span>
+          <span>tokens: <span id="tokens">0</span></span>
+          <span>latency: <span id="latency">—</span></span>
+        </div>
+      </section>
+
+      <section class="panel right">
+        <div class="panel-title">OUTPUT STREAM</div>
+        <div id="output" class="output">
+          <span class="cursor">_</span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bottombar">
+      <span>experimental interface · not production</span>
+      <span class="author">eerrgin</span>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
